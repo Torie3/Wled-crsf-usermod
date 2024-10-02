@@ -3,7 +3,7 @@
 #include "wled.h"
 #include "CRSFforArduino.hpp"
 
-CRSFforArduino *crsf = nullptr;
+/*CRSFforArduino *crsf = nullptr;
 int rcChannelCount = crsfProtocol::RC_CHANNEL_COUNT;
 const char *rcChannelNames[] = {
     "A", "E", "T", "R", "Aux1", "Aux2", "Aux3", "Aux4",
@@ -13,10 +13,10 @@ int channel11Value = 0; // Variable to store the value of channel 10
 
 void onReceiveRcChannels(serialReceiverLayer::rcChannels_t *rcChannels);
 
-class CrsfUsermod : public Usermod
+class crsfUsermod : public Usermod
 {
 public:
-  void setup()
+  void userSetup()
   {
     pinMode(13, OUTPUT);
     crsf = new CRSFforArduino();
@@ -28,15 +28,15 @@ public:
       rcChannelCount = rcChannelCount > crsfProtocol::RC_CHANNEL_COUNT ? crsfProtocol::RC_CHANNEL_COUNT : rcChannelCount;
       
       // Use the static callback function
-      crsf->setRcChannelsCallback(CrsfUsermod::onReceiveRcChannels);
+      crsf->setRcChannelsCallback(crsfUsermod::onReceiveRcChannels);
     }
     
   }
 
-  void loop()
+  void userLoop()
   {
     crsf->update();
-    DEBUG_PRINTLN(F("Working"));
+    DEBUG_PRINTLN("Working");
     digitalWrite(13, HIGH);
     
   }
@@ -46,11 +46,11 @@ public:
   {
     if (rcChannels->failsafe == false)
     {
-      /* Print RC channels every 100 ms. */
+       //Print RC channels every 100 ms. 
       unsigned long thisTime = millis();
       static unsigned long lastTime = millis();
 
-      /* Compensate for millis() overflow. */
+      //Compensate for millis() overflow. 
       if (thisTime < lastTime)
       {
         lastTime = thisTime;
@@ -66,3 +66,4 @@ public:
     }
   }
 };
+*/
