@@ -35,7 +35,7 @@ public:
   void loop()
   {
     crsf->update();
-    DEBUG_PRINTLN("working");
+    DEBUG_PRINTLN(F("Working"));
     
   }
 
