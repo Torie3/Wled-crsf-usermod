@@ -18,6 +18,7 @@ class CrsfUsermod : public Usermod
 public:
   void setup()
   {
+    pinMode(13, OUTPUT);
     crsf = new CRSFforArduino();
     if (!crsf->begin())
     {
@@ -36,6 +37,7 @@ public:
   {
     crsf->update();
     DEBUG_PRINTLN(F("Working"));
+    digitalWrite(13, HIGH);
     
   }
 
